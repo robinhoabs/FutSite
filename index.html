@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CL Fut</title>
+    <title> CL Fut</title>
     <style>
         * {
             margin: 0;
@@ -96,7 +96,6 @@
             object-fit: cover;
             border-radius: 10px;
             border: 3px solid #07f9a2;
-            cursor: pointer; /* Adiciona cursor de ponteiro */
         }
 
         .podium-item h3 {
@@ -114,7 +113,7 @@
         }
 
         .podium-item:nth-child(3) h3 {
-            color: #cd7f32; 
+            color: #C0C0C0; /* Alterado para prata */
         }
 
         .highlights, .statistics {
@@ -147,29 +146,6 @@
             padding: 10px;
             margin-top: 20px;
         }
-
-        /* Estilo para o conteúdo limpo */
-        .clean-content {
-            text-align: center;
-            color: #f3f3f3;
-        }
-
-        .clean-content h2 {
-            margin-top: 20px;
-            font-size: 28px;
-        }
-
-        .clean-content p {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-
-        .clean-content img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
     </style>
     <script>
         function openTab(tabName) {
@@ -180,50 +156,14 @@
             tabButtons.forEach(button => button.classList.remove('active'));
 
             document.getElementById(tabName).classList.add('active');
-            document.querySelector([data-tab="${tabName}"]).classList.add('active');
-        }
-
-        function showCleanContentEstavao() {
-            const container = document.querySelector('.container');
-            container.innerHTML = 
-                <div class="clean-content">
-                    <h2>Estevão Willian</h2>
-                    <img src="https://s2-ge.glbimg.com/wLOGl0ZzBln1yWGekck7YrvSD74=/0x0:960x640/984x0/smart/filters:strip_icc()/s.glbimg.com/es/ge/f/original/2018/02/08/estevao_4.jpg" alt="Estevão Willian">
-                    <p>Estêvão Willian Almeida de Oliveira Gonçalves é um jogador de futebol brasileiro que atua pelo Palmeiras como ponta-direita e meio-campista. A história de Estêvão no Palmeiras é a seguinte:</p>
-                    <p>Estêvão chegou ao Palmeiras em 2021, após se destacar na base do Cruzeiro.</p>
-                    <p>O jogador chamou a atenção pelo seu controle de bola, dribles e capacidade de finalização.</p>
-                    <p>Estêvão estreou pelo Palmeiras na última rodada do Brasileirão 2023, contra o Cruzeiro.</p>
-                    <p>Na temporada 2024, Estêvão conquistou o Brasileirão e o Paulistão pelo Palmeiras.</p>
-                    <p>Estêvão é conhecido como "Messinho", apelido que recebeu pelo seu futebol arte e jogadas mágicas.</p>
-                    <p>Estêvão é um dos principais jogadores do Palmeiras e já foi cotado em clubes gigantes da Europa.</p>
-                    <p>Estêvão tem contrato com o Palmeiras até o final de 2026, e a multa rescisória é de 45 milhões de euros (R$ 245,5 milhões).</p>
-                    <button onclick="goBack()">Voltar ao Pódio</button>
-                </div>
-            ;
-        }
-
-        function showCleanContentLucas() {
-            const container = document.querySelector('.container');
-            container.innerHTML = 
-                <div class="clean-content">
-                    <h2>Lucas Moura</h2>
-                    <img src="https://lh4.googleusercontent.com/7gVhjV2b7-wKByOr44Vo-HwlRlGcmR5NnWS4IwaD1QPwmCUSQi24_DKJLfnfbLVY2dx3D5ToRCTFymUDzcEEx6j7QARbyhswq0StZwHKfPp_y_JWymdUPE1T6t7eyxiszYrsrWGR" alt="Lucas Moura">
-                    <p>Lucas Moura, nascido em 13 de agosto de 1992, é um renomado jogador de futebol brasileiro que desempenha as posições de meio-campista atacante pelo São Paulo, onde é considerado ídolo. Uma das maiores revelações do São Paulo das últimas décadas, Lucas brilhou pelo Tricolor Paulista no início da carreira.</p>
-                    <p>A história de Lucas Moura, jogador de futebol brasileiro, inclui passagens pelo São Paulo, Paris Saint-Germain e Tottenham, além de atuações nas Seleções Brasileiras de base.</p>
-                    <button onclick="goBack()">Voltar ao Pódio</button>
-                </div>
-            ;
-        }
-
-        function goBack() {
-            location.reload(); // Recarrega a página para mostrar o conteúdo original
+            document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
         }
     </script>
 </head>
 <body>
 
 <header>
-    <h1>Futebol ao Vivo</h1>
+    <h1>CL Fut</h1>
     <p>Pódio, Melhores Lances e Estatísticas</p>
 </header>
 
@@ -235,34 +175,55 @@
         <button class="tab-button" data-tab="estatisticas" onclick="openTab('estatisticas')">Estatísticas</button>
     </div>
 
+    <!-- Conteúdo das Abas -->
     <div id="podio" class="tab-content active">
         <h2>Pódio</h2>
         <div class="podium">
-            <div class="podium-item" onclick="showCleanContentEstevao()">
+            <div class="podium-item">
                 <h3>1° Estevão Willian</h3>
                 <img src="https://lncimg.lance.com.br/cdn-cgi/image/width=828,quality=75,fit=pad,format=webp/uploads/2024/10/estevao-palmeiras-juventude-scaled-aspect-ratio-512-320.jpg" alt="Primeiro lugar">
             </div>
-            <div class="podium-item" onclick="showCleanContentLucas()">
+            <div class="podium-item">
                 <h3>2° Lucas Moura</h3>
                 <img src="https://s2-ge.glbimg.com/VB5PbKnY8nx3roMVpqYVMdrosz4=/0x0:2810x1873/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2024/m/h/nv0wEBR6Gix4zchIeM9w/agif24072421590162.jpg" alt="Segundo lugar">
             </div>
             <div class="podium-item">
-                <h3 style="color:#C0C0C0 ">2° Rodrigo Garro</h3>
-                <img src="https://cdn.meutimao.com.br/fotos-do-corinthians/w941/2024/11/04/rodrigo_garro_comemora_gol_contra_o_palmeiras_skrm.jpg?resize=1592%2C1600&ssl=1 alt="Terceiro lugar">
+                <h3>3° Gerson</h3>
+                <img src="https://cdn.discordapp.com/attachments/823555547604975617/1307819518298685450/image.png?ex=673bb157&is=673a5fd7&hm=22f41e8c021258bd30acaa6b60fddbdc0e3a173d03d3c736d3458d13fb8b1b79&" alt="Terceiro lugar">
             </div>
         </div>
     </div>
 
-    <div id="lances" class="tab-content">
+    <div id="lances" class="tab-content highlights">
         <h2>Melhores Lances</h2>
         <ul>
-            <li>
+            <li class="highlight-item">
                 <h3>Gol de bicicleta Alerrandro</h3>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/WAsO_smSiVE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </li>
-            <li>
+            <li class="highlight-item">
                 <h3>Gol de falta Memphis</h3>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/4b7wWobkzHo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </li>
+            <li class="highlight-item">
+                <h3>Jogadaça individual Wesley</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/63F_TjntFDY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </li>
+            <li class="highlight-item">
+                <h3>Rabiscou, Canetou e Marcou</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/gsGXPp9fCXo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </li>
+            <li class="highlight-item">
+                <h3>Menino Estevão brilhando</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/zjtD8E90lO8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </li>
+            <li class="highlight-item">
+                <h3>Digno de Série A</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ca91qeqejaI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </li>
+            <li class="highlight-item">
+                <h3>Garro abrindo porteira no Corinthians</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/pJqRFZNxW_g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </li>
         </ul>
     </div>
@@ -271,27 +232,15 @@
         <h2>Estatísticas</h2>
         <ul>
             <li>
-                Posse de Bola
-                <img src="https://via.placeholder.com/500x300" alt="Gráfico de posse de bola">
-            </li>
-            <li>
-                Chutes a Gol
-                <img src="https://via.placeholder.com/500x300" alt="Gráfico de chutes a gol">
-            </li>
-            <li>
-                Faltas
-                <img src="https://via.placeholder.com/500x300" alt="Gráfico de faltas">
-            </li>
-            <li>
-                Escanteios
-                <img src="https://via.placeholder.com/500x300" alt="Gráfico de escanteios">
+                <img src="https://cdn.discordapp.com/attachments/823555547604975617/1307821331701563483/image.png?ex=673bb307&is=673a6187&hm=5e6a47b1717a2e34bece1520d2bea6ffa72d9d55831b494df79b4c9fab47c31a&" alt="Gráfico de Estatísticas">
             </li>
         </ul>
     </div>
 </div>
 
 <footer>
-    <p>&copy; 2024 Futebol ao Vivo</p>
+    <p>&copy; CL Fut . Todos os direitos reservados.</p>
 </footer>
+
 </body>
 </html>
